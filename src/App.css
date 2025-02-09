@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #222222; /* Dark Violet */
+  color: white;
 }
 
 /* App container */
@@ -11,12 +11,58 @@ body {
   text-align: center;
 }
 
-/* Adjust content to avoid being hidden under navbar */
-.hero, section {
-  padding-top: 80px;
+/* Navigation Bar */
+.navbar {
+  background-color: #ffc300;
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white; /* Gold primary */
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffcc00; /* Lighter Gold */
+}
+
+/* Home Section */
+.home-section {
+  padding: 150px 20px 100px; /* Add big gaps above and below */
   text-align: center;
 }
 
+.home-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #facc15; /* Gold color */
+  margin-bottom: 20px; /* Add space below the heading */
+}
+
+.home-section p {
+  font-size: 1.8rem; /* Bigger font size for description */
+  line-height: 2.5rem; /* Adjusted line height for better readability */
+  margin: 50px auto; /* Add space above and below the paragraph */
+  max-width: 800px; /* Limit width to improve layout */
+}
 
 /* Hero section styles */
 .hero {
@@ -24,24 +70,18 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full viewport height */
-  background-color: #011c46;
+  height: 100vh;
+  background-color: #222222; /* Charcoal Background */
   color: white;
   text-align: center;
   padding: 20px;
 }
 
-/* Hero text */
 .hero h1 {
   font-size: 3rem;
   font-weight: bold;
+  color: #facc15; /* Gold */
   margin-bottom: 0.5rem;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  font-weight: normal;
-  margin-bottom: 1rem;
 }
 
 .hero p {
@@ -50,47 +90,59 @@ body {
   max-width: 600px;
 }
 
-/* Hero button */
-.hero button {
+.gold-button {
+  display: block;
+  margin: 20px auto 0;
   padding: 10px 20px;
   font-size: 1.2rem;
-  background-color: #ffc300;
-  color: white;
+  background-color: #facc15;
+  color: #222222;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.hero button:hover {
-  background-color: #3700b3;
+.gold-button:hover {
+  background-color: #3c096c; /* Dark Gold */
+  transform: scale(1.05);
+  color: aliceblue;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero button {
-    font-size: 1rem;
-  }
+.featured-song {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffcc00; /* Light Gold */
+  color: #222222;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
+.songs-section {
+  background-color: #222222; /* Dark Violet */
+  padding: 80px 20px;
+}
 
-  .hero p {
-    font-size: 0.9rem;
-  }
+.songs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
 
-  .hero button {
-    font-size: 0.9rem;
-  }
+.song-card {
+  background-color: #ffcc00; /* Light Gold */
+  color: #222222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+#contact {
+  background-color: #222222;
+  padding: 80px 20px;
+  text-align: center;
 }
