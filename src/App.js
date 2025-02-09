@@ -1,6 +1,32 @@
 import React from 'react';
 import './App.css';
 
+function MusicPlayer({ title, artist, audioSrc }) {
+  return (
+    <div className="card">
+      <div className="top">
+        <div className="pfp">
+          <div className="playing">
+            <div className="greenline line-1"></div>
+            <div className="greenline line-2"></div>
+            <div className="greenline line-3"></div>
+            <div className="greenline line-4"></div>
+            <div className="greenline line-5"></div>
+          </div>
+        </div>
+        <div className="texts">
+          <p className="title-1">{title}</p>
+          <p className="title-2">{artist}</p>
+        </div>
+      </div>
+      <audio controls>
+        <source src={audioSrc} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="App">
@@ -14,8 +40,8 @@ function App() {
           </ul>
         </nav>
       </div>
-      
-      {/* Home Page */}
+
+      {/* Home Section */}
       <div className="home-section" id="home">
         <h1>Discover the Art of Songwriting</h1>
         <p>
@@ -24,13 +50,11 @@ function App() {
         </p>
 
         {/* Featured Song */}
-        <div className="featured-song">
-          <h2>Most Popular Song: "Golden Dreams"</h2>
-          <audio controls>
-            <source src="./assets/golden-dreams.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+        <MusicPlayer
+          title="Golden Dreams"
+          artist="John Doe"
+          audioSrc="./assets/golden-dreams.mp3"
+        />
 
         {/* Button to Navigate to Songs Page */}
         <button className="gold-button" onClick={() => window.location.href = "#songs"}>
@@ -42,48 +66,51 @@ function App() {
       <section id="songs" className="songs-section">
         <h2>All Songs</h2>
         <div className="songs-container">
-          <div className="song-card">
-            <h3>"Golden Dreams"</h3>
-            <audio controls>
-              <source src="./assets/golden-dreams.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-          <div className="song-card">
-            <h3>"Echoes of the Night"</h3>
-            <audio controls>
-              <source src="./assets/echoes-of-the-night.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-
-          <div className="song-card">
-            <h3>"Melody in Motion"</h3>
-            <audio controls>
-              <source src="./assets/melody-in-motion.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
+          <MusicPlayer
+            title="Golden Dreams"
+            artist="John Doe"
+            audioSrc="./assets/golden-dreams.mp3"
+          />
+          <MusicPlayer
+            title="Echoes of the Night"
+            artist="Jane Doe"
+            audioSrc="./assets/echoes-of-the-night.mp3"
+          />
+          <MusicPlayer
+            title="Melody in Motion"
+            artist="John Doe"
+            audioSrc="./assets/melody-in-motion.mp3"
+          />
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Interested in collaborations or custom songwriting? Reach out below!</p>
-        <form>
-          <label>Name:</label>
-          <input type="text" placeholder="Your Name" required />
+      <section id="contact" className="contact-section">
+        <div className="form-card1">
+          <div className="form-card2">
+            <form className="form">
+              <p className="form-heading">Get In Touch</p>
 
-          <label>Email:</label>
-          <input type="email" placeholder="Your Email" required />
+              <div className="form-field">
+                <input required placeholder="Name" className="input-field" type="text" />
+              </div>
 
-          <label>Message:</label>
-          <textarea placeholder="Write your message..." required></textarea>
+              <div className="form-field">
+                <input required placeholder="Email" className="input-field" type="email" />
+              </div>
 
-          <button type="submit" className="gold-button">Send Message</button>
-        </form>
+              <div className="form-field">
+                <input required placeholder="Subject" className="input-field" type="text" />
+              </div>
+
+              <div className="form-field">
+                <textarea required placeholder="Message" cols="30" rows="3" className="input-field"></textarea>
+              </div>
+
+              <button className="sendMessage-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
       </section>
     </div>
   );

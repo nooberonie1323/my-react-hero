@@ -1,0 +1,89 @@
+.card {
+    position: relative;
+    width: 250px;
+    height: 120px;
+    background: #191414;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .top {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .pfp {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    height: 40px;
+    width: 40px;
+    background-color: #d2d2d2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title-1 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .title-2 {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .time {
+    width: 90%;
+    background-color: #5e5e5e;
+    height: 6px;
+    border-radius: 3px;
+    position: absolute;
+    left: 5%;
+    bottom: 22px;
+  }
+  
+  .elapsed {
+    width: 42%;
+    background-color: #1db954;
+    height: 100%;
+    border-radius: 3px;
+  }
+  
+  .controls {
+    color: white;
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .controls audio {
+    width: 180px;
+    margin-left: 10px;
+  }
+  
+  .timetext {
+    color: white;
+    font-size: 8px;
+    position: absolute;
+  }
+  
+  .time_now {
+    bottom: 11px;
+    left: 10px;
+  }
+  
+  .time_full {
+    bottom: 11px;
+    right: 10px;
+  }
+  

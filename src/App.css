@@ -2,8 +2,13 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #222222; /* Dark Violet */
+  background-color: #0e0e0e;
   color: white;
+  background-image: url('./assets/background.jpg'); /* Ensure the file exists */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 /* App container */
@@ -33,61 +38,33 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: white; /* Gold primary */
+  color: white;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px 15px;
-  transition: color 0.3s ease;
+  transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 .navbar a:hover {
-  color: #ffcc00; /* Lighter Gold */
+  color: #6812b9;
+  transform: scale(1.2);
 }
 
-/* Home Section */
-.home-section {
-  padding: 150px 20px 100px; /* Add big gaps above and below */
+/* Sections with Transparent Background */
+.home-section, .songs-section, .contact-section {
+  padding: 150px 20px 100px;
   text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  margin: 50px auto;
+  max-width: 900px;
 }
 
 .home-section h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #facc15; /* Gold color */
-  margin-bottom: 20px; /* Add space below the heading */
-}
-
-.home-section p {
-  font-size: 1.8rem; /* Bigger font size for description */
-  line-height: 2.5rem; /* Adjusted line height for better readability */
-  margin: 50px auto; /* Add space above and below the paragraph */
-  max-width: 800px; /* Limit width to improve layout */
-}
-
-/* Hero section styles */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #222222; /* Charcoal Background */
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #facc15; /* Gold */
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
+  color: #facc15;
+  margin-bottom: 20px;
 }
 
 .gold-button {
@@ -104,24 +81,15 @@ body {
 }
 
 .gold-button:hover {
-  background-color: #3c096c; /* Dark Gold */
+  background-color: #3c096c;
   transform: scale(1.05);
   color: aliceblue;
 }
 
-.featured-song {
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffcc00; /* Light Gold */
-  color: #222222;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 500px;
-}
-
+/* Songs Section */
 .songs-section {
-  background-color: #222222; /* Dark Violet */
   padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.7); /* Transparent dark background */
 }
 
 .songs-container {
@@ -132,17 +100,176 @@ body {
   padding: 20px;
 }
 
-.song-card {
-  background-color: #ffcc00; /* Light Gold */
-  color: #222222;
+/* Featured Song Section */
+.featured-song {
+  margin: 20px auto; /* Center horizontally */
   padding: 20px;
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff;
   border-radius: 10px;
   text-align: center;
-  width: 300px;
+  max-width: 400px; /* Restrict width for proper centering */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content vertically */
 }
 
-#contact {
-  background-color: #222222;
-  padding: 80px 20px;
+.featured-song h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.featured-song audio {
+  width: 100%; /* Ensure audio player fits inside the container */
+  max-width: 300px; /* Restrict maximum width */
+}
+
+/* Align Featured Song in the Home Section */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center everything horizontally */
+}
+
+/* Music Player Card */
+.card {
+  position: relative;
+  width: 260px; /* Adjust width for visibility */
+  height: 150px;
+  background: #191414;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for visibility */
+}
+
+.card .top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card .pfp {
+  height: 50px;
+  width: 50px;
+  background-color: #d2d2d2;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .title-1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.card .title-2 {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.card .controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.card audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Contact Form */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 10px;
+  padding-inline: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 20px;
+}
+
+.form-heading {
   text-align: center;
+  margin: 2em;
+  color: #ffcc00;
+  font-size: 1.2em;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 10px;
+  padding: 0.6em;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #ccd6f6;
+  padding-inline: 1em;
+}
+
+.sendMessage-btn {
+  cursor: pointer;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ffcc00;
+  font-weight: bold;
+  outline: 1px solid #ffcc00;
+  transition: all ease-in-out 0.3s;
+}
+
+.sendMessage-btn:hover {
+  background-color: #3c096c;
+  color: white;
+}
+
+/* Contact Form Card */
+.form-card1 {
+  background-image: linear-gradient(163deg, #FFCC00 0%, #dfb200 100%);
+  border-radius: 22px;
+  padding: 10px;
+}
+
+.form-card1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(255, 230, 0, 0.767);
+}
+
+.form-card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust width for smaller screens */
+  }
 }
